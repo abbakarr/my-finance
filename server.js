@@ -12,9 +12,10 @@ const transactions = require('./routes/transaction')
 
 const app = express();
 
+app.use(express.json())
+
 app.use('/api/transactions', transactions) 
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`server running on ${process.env.NODE_ENV} mode on ${PORT}`.yellow.bold)); 
-
