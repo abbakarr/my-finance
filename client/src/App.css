@@ -1,0 +1,49 @@
+.footer {
+    padding: 1px;
+    color: #ffff;
+}
+.footer p {
+    padding: 8px;
+}
+.section {
+    min-height: 84vh;
+}
+.m-width {
+    max-width: 70%;
+    padding: 11px;
+}
+.transactionList {
+    min-width: 75%;
+}
+
+.categories-container {
+    margin-top: 20px;
+  }
+  
+  .categories-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .categories-container li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .category-name {
+    text-align: left;
+    flex: 1;
+  }
+  
+  .category-amount {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .category-percentage {
+    text-align: right;
+    flex: 1;
+  }
+  
