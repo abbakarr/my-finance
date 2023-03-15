@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { IncomeExpenseContext } from '../context/IncomeExpensesContext';
+import { GlobalContext } from '../context/GlobalState';
 
 const Categories = () => {
-  const { transactions } = useContext(IncomeExpenseContext);
+  const { transactions } = useContext(GlobalContext);
 
   const expenseCategories = transactions
     .filter((transaction) => transaction.type === 'expense')

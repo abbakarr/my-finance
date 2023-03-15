@@ -1,22 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { IncomeExpenseContext } from '../context/IncomeExpensesContext';
+import { GlobalContext } from '../context/GlobalState';
 
 const Transactions = () => {
-  const { transactions } = useContext(IncomeExpenseContext);
+  const { transactions, getTransactions } = useContext(GlobalContext);
 
-  const transactionItems = transactions.map((transaction) => (
+  useEffect(() => {
+    getTransactions();
+  }, []);
+
+  const transactionItems = transactions.sort().reverse().slice(0, 10).map((transaction) => (
     <ListGroup.Item
-      key={transaction.id}
+      key={transaction._id}
       className={transaction.type === 'income' ? 'text-success' : 'text-danger'}
     >
-      {transaction.text}{' '}
+      {transaction.description}{' '}
       <span className="float-right transactionList">
         {transaction.type === 'income' ? '+' : '-'}${Math.abs(transaction.amount)}
       </span>
     </ListGroup.Item>
   ));
-
+  
   return (
     <>
       <h4 className="mb-4">Transactions</h4>

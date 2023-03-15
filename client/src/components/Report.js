@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { IncomeExpenseContext } from '../context/IncomeExpensesContext';
+import { GlobalContext } from '../context/GlobalState';
 
 const Report = () => {
-  const { transactions } = useContext(IncomeExpenseContext);
+  const { transactions } = useContext(GlobalContext);
   const [dateFilter, setDateFilter] = useState('');
   const [textFilter, setTextFilter] = useState('');
   const [amountFilter, setAmountFilter] = useState('');

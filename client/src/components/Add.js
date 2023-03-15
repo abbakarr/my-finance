@@ -1,36 +1,35 @@
 import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { IncomeExpenseContext } from '../context/IncomeExpensesContext';
+import { GlobalContext } from '../context/GlobalState';
+
 
 const Add = () => {
-  const { addTransaction } = useContext(IncomeExpenseContext);
-  const [text, setText] = useState('');
+  const { addTransaction } = useContext(GlobalContext);
   const [amount, setAmount] = useState(0);
-  const [transactionType, setTransactionType] = useState('');
+  const [type, setType] = useState('');
   const [category, setCategory] = useState('');
-  const [date, setDate] = useState("");
+  const [description, setDescription] = useState('');
+  const [createdAt, setCreatedAt] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
-      text,
       amount: parseInt(amount),
-      type: transactionType,
+      type: type,
       category: category,
-      date: date,
+      description: description,
+      createdAt: createdAt
     };
 
     addTransaction(newTransaction);
 
-    setText('');
     setAmount(0);
-    setTransactionType('');
-    setTransactionType('');
-    setDate('');
-
-    console.log(newTransaction)
+    setType('');
+    setCategory('');
+    setDescription('');
+    setCreatedAt('');
   };
   return (
     <Form onSubmit={handleSubmit} style={{ minWidth: '300px' }}>
@@ -47,8 +46,8 @@ const Add = () => {
         <Form.Label>Transaction type</Form.Label>
         <Form.Control
           as="select"
-          value={transactionType}
-          onChange={(e) => setTransactionType(e.target.value)}
+          value={type}
+          onChange={(e) => setType(e.target.value)}
         >
           <option disabled value=''>Select</option>
           <option value="income">Income</option>
@@ -75,8 +74,8 @@ const Add = () => {
         <Form.Control
           type="text"
           placeholder="Enter description"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           className="p-3"
         />
       </Form.Group>
@@ -85,8 +84,8 @@ const Add = () => {
   <Form.Control
     type="date"
     placeholder="Enter date"
-    value={date}
-    onChange={(e) => setDate(e.target.value)}
+    value={createdAt}
+    onChange={(e) => setCreatedAt(e.target.value)}
   />
 </Form.Group>
 

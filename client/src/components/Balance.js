@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
-import { IncomeExpenseContext } from '../context/IncomeExpensesContext';
+import { GlobalContext } from '../context/GlobalState';
 
 const Balance = () => {
-  const { transactions } = useContext(IncomeExpenseContext);
+  const { transactions } = useContext(GlobalContext);
 
-  const balance = transactions.reduce((acc, transaction) => {
-    return transaction.type === 'income' ? acc + transaction.amount : acc - transaction.amount;
-  }, 0);
+  const income = transactions
+    .filter((transaction) => transaction.type === 'income')
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
+
+  const expenses = transactions
+    .filter((transaction) => transaction.type === 'expense')
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
+
+  const balance = income - expenses;
 
   return (
     <div>

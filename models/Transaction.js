@@ -1,14 +1,25 @@
 const mongoose = require('mongoose');
 
 const transactionSchema = new mongoose.Schema({
-    text: {
+    
+    amount: {
+        type: Number,
+        reuired: [true, 'please add a number']
+    },
+    type: {
         type: String,
         trim: 'true',
         required: [true, 'please add some text']
     },
-    amount: {
-        type: Number,
-        reuired: [true, 'please add a number']
+    category: {
+        type: String,
+        trim: 'true',
+        required: [true, 'please add some text']
+    },
+    description: {
+        type: String,
+        trim: 'true',
+        required: [true, 'please add some text']
     },
      createdAt: {
         date: Date,

@@ -11,15 +11,15 @@ exports.getTransactions = async (req, res, next) => {
             data: transactions,
         })
     } catch (error) {
-        return res.send(500).json({
+        return res.status(500).json({
             success: false,
             error: 'server-error'
         })
     }
-}
-exports.addTransactions = async (req, res, next) => {
+};
+exports.addTransaction = async (req, res, next) => {
  try {
-    const { text, amount } = req.body;
+    const { amount, type, category, description, createdAt } = req.body;
     const transaction = await Transaction.create(req.body)
 
     return res.status(201).json({
@@ -27,15 +27,33 @@ exports.addTransactions = async (req, res, next) => {
         data: transaction,
     })
  } catch (error) {
-    return res.send(501).json({
+    return res.status(501).json({
         success: false,
     })
  }
-}
-exports.deleteTransactions = async (req, res, next) => {
-    try {
-        
-    } catch (error) {
-        
+};
+exports.deleteTransaction = async (req, res, next) => {
+  try {
+    const transaction = await Transaction.findById(req.params.id);
+
+    if(!transaction) {
+      return res.status(404).json({
+        success: false,
+        error: 'No transaction found'
+      });
     }
+
+    await transaction.remove();
+
+    return res.status(200).json({
+      success: true,
+      data: {}
+    });
+
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server Error'
+    });
+  }
 }

@@ -8,7 +8,7 @@ import Home from './components/Home';
 function App() {
   return (
     <div>
-     <LandingPage />
+     <Home />
     </div>
   );
 }
