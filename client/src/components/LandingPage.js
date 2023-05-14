@@ -2,7 +2,10 @@ import React from "react";
 import Navigation from "./Navbar";
 import Footer from "./Footer";
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card } from "react-bootstrap";
+import Login from "./Login";
+
 const Landingpage = () => {
   return (
     <div>
@@ -20,8 +23,11 @@ const Landingpage = () => {
                 where your money is going{" "}
               </p>
               <Button className="btn btn-primary btn-lg bg-dark">
-                Try for free
-              </Button>
+  <Link to="/login" className="text-white text-decoration-none">
+    Try for free
+  </Link>
+</Button>
+
             </div>
           </div>
         </div><br></br>

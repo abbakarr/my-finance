@@ -7,14 +7,14 @@ function Navigations() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">my Finances</Navbar.Brand>
+        <Navbar.Brand>my Finances</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" defaultActiveKey="#income">
-            <Nav.Link href="#income">Income</Nav.Link>
-            <Nav.Link href="#expenses">Expenses</Nav.Link>
-            <Nav.Link href="#report">Report</Nav.Link>
-            <Nav.Link href="#contact">Contact us</Nav.Link>
+            <Nav.Link to='Home'>Home</Nav.Link>
+            <Nav.Link to='Home'>Features</Nav.Link>
+            <Nav.Link to='Home'>Report</Nav.Link>
+            <Nav.Link to='Home'>Contact us</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#user-profile">
