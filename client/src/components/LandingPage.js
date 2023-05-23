@@ -36,7 +36,7 @@ const Landingpage = () => {
         <Col md={6} lg={3}>
           <Card>
           <Card.Body>
-    <Card.Title>Income Analytics</Card.Title>
+    <Card.Title className="text-warning">Income Analytics</Card.Title>
     <Card.Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
       tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
@@ -48,7 +48,7 @@ const Landingpage = () => {
         <Col md={6} lg={3}>
           <Card>
           <Card.Body>
-    <Card.Title>Expenses Tracker</Card.Title>
+    <Card.Title className="text-warning">Expenses Tracker</Card.Title>
     <Card.Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
       tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
@@ -60,7 +60,7 @@ const Landingpage = () => {
         <Col md={6} lg={3}>
           <Card>
           <Card.Body>
-    <Card.Title>Financial Report</Card.Title>
+    <Card.Title className="text-warning">Financial Report</Card.Title>
     <Card.Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
       tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
@@ -72,7 +72,7 @@ const Landingpage = () => {
         <Col md={6} lg={3}>
           <Card>
           <Card.Body>
-    <Card.Title>Wealth Management</Card.Title>
+    <Card.Title className="text-warning">Management</Card.Title>
     <Card.Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
       tortor eget nulla ornare consequat. Nulla vitae mauris ac ex

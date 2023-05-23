@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Navigations from './Navbar';
 import Footer from './Footer';
-import Home from './Home';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,6 +18,7 @@ const Login = () => {
   return (<div>
 <Navigations />
 <Container className="mt-5 login-height">
+  <p className="text-danger">Please note that backend for login is under development, type any email & password it will work</p>
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
           <h1 className="text-center">Login</h1>
@@ -27,13 +27,13 @@ const Login = () => {
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder="Enter any email it will work"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
-            <Form.Group controlId="password">
+            <Form.Group controlId="type anything it will work">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
