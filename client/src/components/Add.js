@@ -5,7 +5,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 const Add = () => {
   const { addTransaction } = useContext(GlobalContext);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(null);
   const [type, setType] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
@@ -36,10 +36,11 @@ const Add = () => {
       <Form.Group controlId="formAmount">
         <Form.Label>Amount</Form.Label>
         <Form.Control
-          type="number"
+          type="text"
           placeholder="Enter amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          required
         />
       </Form.Group>
       <Form.Group controlId="formTransactionType">
@@ -48,6 +49,7 @@ const Add = () => {
           as="select"
           value={type}
           onChange={(e) => setType(e.target.value)}
+          required
         >
           <option disabled value=''>Select</option>
           <option value="income">Income</option>

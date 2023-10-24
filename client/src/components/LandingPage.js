@@ -27,62 +27,53 @@ const Landingpage = () => {
     Try for free
   </Link>
 </Button>
-
             </div>
           </div>
         </div><br></br>
-        <Container>
-      <Row>
-        <Col md={6} lg={3}>
-          <Card>
-          <Card.Body>
-    <Card.Title className="text-warning">Income Analytics</Card.Title>
-    <Card.Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
-      tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
-      hendrerit bibendum. 
-    </Card.Text>
-  </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3}>
-          <Card>
-          <Card.Body>
-    <Card.Title className="text-warning">Expenses Tracker</Card.Title>
-    <Card.Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
-      tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
-      hendrerit bibendum. 
-    </Card.Text>
-  </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3}>
-          <Card>
-          <Card.Body>
-    <Card.Title className="text-warning">Financial Report</Card.Title>
-    <Card.Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
-      tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
-      hendrerit bibendum. 
-    </Card.Text>
-  </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} lg={3}>
-          <Card>
-          <Card.Body>
-    <Card.Title className="text-warning">Management</Card.Title>
-    <Card.Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel
-      tortor eget nulla ornare consequat. Nulla vitae mauris ac ex
-      hendrerit bibendum. 
-    </Card.Text>
-  </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+        <div className="products">
+
+        <div className="product-card">
+            <h3>Financial Management</h3>
+            <div className="info-group">
+                <p>(234) 7037434973</p>
+            </div>
+            <div className="info-group">
+                <p>fin@finance.com</p>
+            </div>
+        </div>
+        
+        <div className="product-card">
+            <h3>Tax Management</h3>
+            <div className="info-group">
+                <p>(234) 555-2345</p>
+            </div>
+            <div className="info-group">
+                <p>tax@finance.com</p>
+            </div>
+        </div>
+        
+        <div className="product-card">
+            <h3>Audit Compliance</h3>
+            <div className="info-group">
+                <p>(234) 555-4567</p>
+            </div>
+            <div className="info-group">
+                <p>admin@finance.com</p>
+            </div>
+        </div>
+        
+        <div className="product-card">
+            <h3>Expense Analytics</h3>
+            <div className="info-group">
+                <p>(234) 89623456</p>
+            </div>
+            <div className="info-group">
+                <p>audit@finance.com</p>
+            </div>
+        </div>
+        
+    </div>
+
       </section>
       <Footer />
     </div>
